@@ -14,6 +14,12 @@ body{
     overflow: hidden;
 }
 
+#app {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+
 #admin-panel-titlebar-left .el-page-header__content {
     align-items: center;
     display: flex;

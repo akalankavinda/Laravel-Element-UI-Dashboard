@@ -1,15 +1,15 @@
 <template>
-    <div id="admin-panel-wrapper">
+    <div id="admin-panel-wrapper" ref="dashboard">
         <div id="admin-panel-sidebar">
             <div id="admin-panel-title">Example Name</div>
             <el-menu
-            default-active="2"
-            class="el-menu-vertical-demo"
-            @open="handleOpen"
-            @close="handleClose"
-            background-color="#545c64"
-            text-color="#fff"
-            active-text-color="#ffd04b">
+                default-active="2"
+                class="el-menu-vertical-demo"
+                @open="handleOpen"
+                @close="handleClose"
+                background-color="#394046"
+                text-color="#e8e8e8"
+                active-text-color="#ffc72a">
             <el-submenu index="1">
                 <template slot="title">
                 <i class="el-icon-location"></i>
@@ -122,6 +122,7 @@ export default {
                 title: 'Title',
                 message: cmd
             });
+            v_inst.swapComponent(v_inst.$options.components.SignIn);
         },
         handleOpen(){
 
@@ -145,7 +146,7 @@ export default {
 #admin-panel-sidebar{
     display: flex;
     width: 250px;
-    background-color:#545c64;
+    background-color:#394046;
     flex-direction: column;
 }
 
@@ -162,7 +163,7 @@ export default {
     padding: 25px 20px;
     color: #d8a0ea;
     font-size: 18px;
-    background-color: #545c64;
+    background-color: #394046;
     border-radius: 5px;
 }
 

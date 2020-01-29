@@ -1,5 +1,5 @@
 <template>
-    <div id="sign-in-page">
+    <div id="sign-in-page" ref="sign-in">
         <div id="sign-in-left">
             <svg version="1.1" id="bulb_svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
 	 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve"><path style="fill:#FFD15C;" d="M314.667,391.467c6.4-21.333,19.2-40.533,36.267-55.467c32-26.667,52.267-67.2,52.267-112
@@ -48,7 +48,7 @@
                     </el-input>
                 </div>
                 <div class="sign-in-form-submit-row">
-                    <div id="sign-in-form-submit">Sign in</div>
+                    <div id="sign-in-form-submit" v-on:click="login">Sign in</div>
                 </div>
             </div>
         </div>
@@ -62,6 +62,21 @@ export default {
         return {
             username: '',
             password: ''
+        }
+    },
+    methods:{
+        login(){
+
+            axios.post(`api/users/login`, {username: this.username, password:this.password})
+                .then(response => {
+                    if(response.status = 200){
+                        v_inst.swapComponent(v_inst.$options.components.DashBoard);
+                    }
+                    console.log(response)
+                })
+                .catch(e => {
+                this.errors.push(e)
+            });
         }
     }
 }
@@ -94,7 +109,7 @@ div#sign-in-form-wrap {
     background-color: #fff;
     border-radius: 10px;
     box-shadow: 0px 5px 10px 0px #00000061;
-    padding: 40px;
+    padding: 60px 40px;
     margin: 0 100px;
     width: 270px;
 }

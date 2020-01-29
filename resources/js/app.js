@@ -3,18 +3,18 @@ require('./bootstrap');
 import Vue from 'vue'
 import router from './routes'
 import Element from 'element-ui'
+import axios from 'axios'
 
 import SignIn from './views/SignIn/SignIn'
 import Dashboard from './views/app'
 
 Vue.use(Element)
 
-new Vue({
+v_inst = new Vue({
     el : '#app',
     router,
-    render: h => h(SignIn),
     data: {
-        currentComponent: 'SignIn'
+        currentComponent: SignIn
       },
       components: {
         'SignIn': SignIn,
@@ -22,6 +22,7 @@ new Vue({
       },
       methods: {
         swapComponent: function(component) {
+            console.log('swapping....')
           this.currentComponent = component;
         }
       }

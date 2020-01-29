@@ -3540,8 +3540,118 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'Home'
+  name: 'Home',
+  data: function data() {
+    return {
+      tableData: [{
+        date: '2016-05-03',
+        name: 'Tom',
+        address: 'No. 189, Grove St, Los Angeles'
+      }, {
+        date: '2016-05-02',
+        name: 'Tom',
+        address: 'No. 189, Grove St, Los Angeles'
+      }, {
+        date: '2016-05-04',
+        name: 'Tom',
+        address: 'No. 189, Grove St, Los Angeles'
+      }, {
+        date: '2016-05-01',
+        name: 'Tom',
+        address: 'No. 189, Grove St, Los Angeles'
+      }, {
+        date: '2016-05-08',
+        name: 'Tom',
+        address: 'No. 189, Grove St, Los Angeles'
+      }, {
+        date: '2016-05-06',
+        name: 'Tom',
+        address: 'No. 189, Grove St, Los Angeles'
+      }, {
+        date: '2016-05-02',
+        name: 'Tom',
+        address: 'No. 189, Grove St, Los Angeles'
+      }, {
+        date: '2016-05-04',
+        name: 'Tom',
+        address: 'No. 189, Grove St, Los Angeles'
+      }, {
+        date: '2016-05-01',
+        name: 'Tom',
+        address: 'No. 189, Grove St, Los Angeles'
+      }, {
+        date: '2016-05-02',
+        name: 'Tom',
+        address: 'No. 189, Grove St, Los Angeles'
+      }, {
+        date: '2016-05-04',
+        name: 'Tom',
+        address: 'No. 189, Grove St, Los Angeles'
+      }, {
+        date: '2016-05-01',
+        name: 'Tom',
+        address: 'No. 189, Grove St, Los Angeles'
+      }, {
+        date: '2016-05-02',
+        name: 'Tom',
+        address: 'No. 189, Grove St, Los Angeles'
+      }, {
+        date: '2016-05-04',
+        name: 'Tom',
+        address: 'No. 189, Grove St, Los Angeles'
+      }, {
+        date: '2016-05-01',
+        name: 'Tom',
+        address: 'No. 189, Grove St, Los Angeles'
+      }, {
+        date: '2016-05-02',
+        name: 'Tom',
+        address: 'No. 189, Grove St, Los Angeles'
+      }, {
+        date: '2016-05-04',
+        name: 'Tom',
+        address: 'No. 189, Grove St, Los Angeles'
+      }, {
+        date: '2016-05-01',
+        name: 'Tom',
+        address: 'No. 189, Grove St, Los Angeles'
+      }, {
+        date: '2016-05-02',
+        name: 'Tom',
+        address: 'No. 189, Grove St, Los Angeles'
+      }, {
+        date: '2016-05-04',
+        name: 'Tom',
+        address: 'No. 189, Grove St, Los Angeles'
+      }, {
+        date: '2016-05-01',
+        name: 'Tom',
+        address: 'No. 189, Grove St, Los Angeles'
+      }, {
+        date: '2016-05-07',
+        name: 'Tom',
+        address: 'No. 189, Grove St, Los Angeles'
+      }]
+    };
+  }
 });
 
 /***/ }),
@@ -3619,6 +3729,24 @@ __webpack_require__.r(__webpack_exports__);
       username: '',
       password: ''
     };
+  },
+  methods: {
+    login: function login() {
+      var _this = this;
+
+      axios.post("api/users/login", {
+        username: this.username,
+        password: this.password
+      }).then(function (response) {
+        if (response.status = 200) {
+          v_inst.swapComponent(v_inst.$options.components.DashBoard);
+        }
+
+        console.log(response);
+      })["catch"](function (e) {
+        _this.errors.push(e);
+      });
+    }
   }
 });
 
@@ -3754,6 +3882,7 @@ __webpack_require__.r(__webpack_exports__);
         title: 'Title',
         message: cmd
       });
+      v_inst.swapComponent(v_inst.$options.components.SignIn);
     },
     handleOpen: function handleOpen() {},
     handleClose: function handleClose() {}
@@ -5596,7 +5725,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "\ndiv#sign-in-page {\n    display: -webkit-box;\n    display: flex;\n    height: 100%;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n            flex-direction: row;\n}\ndiv#sign-in-left {\n    display: -webkit-box;\n    display: flex;\n    -webkit-box-flex: 3;\n            flex-grow: 3;\n    -webkit-box-align: center;\n            align-items: center;\n    -webkit-box-pack: center;\n            justify-content: center;\n    background: -webkit-gradient(linear, left top, right top, from(rgb(116, 116, 191)), to(rgb(52, 138, 199)));\n    background: linear-gradient(to right, rgb(116, 116, 191), rgb(52, 138, 199));\n}\ndiv#sign-in-right {\n    display: -webkit-box;\n    display: flex;\n    -webkit-box-align: center;\n            align-items: center;\n    -webkit-box-pack: center;\n            justify-content: center;\n    background: linear-gradient(135deg, #484d52, #343a40);\n}\ndiv#sign-in-form-wrap {\n    background-color: #fff;\n    border-radius: 10px;\n    box-shadow: 0px 5px 10px 0px #00000061;\n    padding: 40px;\n    margin: 0 100px;\n    width: 270px;\n}\ndiv#login-form-title {\n    font-size: 24px;\n    margin-bottom: 20px;\n    color: #1f2f3d;\n}\n.sign-in-form-row {\n    margin-bottom: 15px;\n}\n#sign-in-form-submit {\n    color: #fff;\n    padding: 10px;\n    border-radius: 5px;\n    text-align: center;\n    cursor: pointer;\n    background: -webkit-gradient(linear, left top, right top, from(rgb(116, 116, 191)), to(rgb(52, 138, 199)));\n    background: linear-gradient(to right, rgb(116, 116, 191), rgb(52, 138, 199));\n    -webkit-transition: 0.3s linear;\n    transition: 0.3s linear;\n}\n.sign-in-form-submit-row {\n    margin-top: 25px;\n}\n#sign-in-form-submit:hover {\n    box-shadow: 0px 5px 5px 0px #00000041;\n}\n.el-input-group__prepend {\n    padding: 0 10px;\n}\n#bulb_svg{\n    width: 200px\n}\n\n", ""]);
+exports.push([module.i, "\ndiv#sign-in-page {\n    display: -webkit-box;\n    display: flex;\n    height: 100%;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n            flex-direction: row;\n}\ndiv#sign-in-left {\n    display: -webkit-box;\n    display: flex;\n    -webkit-box-flex: 3;\n            flex-grow: 3;\n    -webkit-box-align: center;\n            align-items: center;\n    -webkit-box-pack: center;\n            justify-content: center;\n    background: -webkit-gradient(linear, left top, right top, from(rgb(116, 116, 191)), to(rgb(52, 138, 199)));\n    background: linear-gradient(to right, rgb(116, 116, 191), rgb(52, 138, 199));\n}\ndiv#sign-in-right {\n    display: -webkit-box;\n    display: flex;\n    -webkit-box-align: center;\n            align-items: center;\n    -webkit-box-pack: center;\n            justify-content: center;\n    background: linear-gradient(135deg, #484d52, #343a40);\n}\ndiv#sign-in-form-wrap {\n    background-color: #fff;\n    border-radius: 10px;\n    box-shadow: 0px 5px 10px 0px #00000061;\n    padding: 60px 40px;\n    margin: 0 100px;\n    width: 270px;\n}\ndiv#login-form-title {\n    font-size: 24px;\n    margin-bottom: 20px;\n    color: #1f2f3d;\n}\n.sign-in-form-row {\n    margin-bottom: 15px;\n}\n#sign-in-form-submit {\n    color: #fff;\n    padding: 10px;\n    border-radius: 5px;\n    text-align: center;\n    cursor: pointer;\n    background: -webkit-gradient(linear, left top, right top, from(rgb(116, 116, 191)), to(rgb(52, 138, 199)));\n    background: linear-gradient(to right, rgb(116, 116, 191), rgb(52, 138, 199));\n    -webkit-transition: 0.3s linear;\n    transition: 0.3s linear;\n}\n.sign-in-form-submit-row {\n    margin-top: 25px;\n}\n#sign-in-form-submit:hover {\n    box-shadow: 0px 5px 5px 0px #00000041;\n}\n.el-input-group__prepend {\n    padding: 0 10px;\n}\n#bulb_svg{\n    width: 200px\n}\n\n", ""]);
 
 // exports
 
@@ -5615,7 +5744,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "\n#admin-panel-wrapper{\n    width: 100%;\n    height: 100%;\n    overflow: hidden;\n    display: -webkit-box;\n    display: flex;\n}\n#admin-panel-sidebar{\n    display: -webkit-box;\n    display: flex;\n    width: 250px;\n    background-color:#545c64;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n            flex-direction: column;\n}\n#admin-panel-body{\n    display: -webkit-box;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n            flex-direction: column;\n    -webkit-box-flex: 1;\n            flex-grow: 1;\n    background-color:#eeeeee;\n}\n#admin-panel-title {\n    display: -webkit-box;\n    display: flex;\n    padding: 25px 20px;\n    color: #d8a0ea;\n    font-size: 18px;\n    background-color: #545c64;\n    border-radius: 5px;\n}\n#admin-panel-body-titlebar {\n    width: 100%;\n    display: -webkit-box;\n    display: flex;\n    padding: 15px;\n    box-sizing: border-box;\n}\n#admin-panel-body-content-wrap {\n    display: -webkit-box;\n    display: flex;\n    -webkit-box-flex: 1;\n            flex-grow: 1;\n    width: 100%;\n    overflow: hidden;\n    padding: 0 15px 15px;\n    box-sizing: border-box;\n}\n#admin-panel-body-content {\n\twidth: 100%;\n\tborder-radius: 5px;\n    background: white;\n    padding: 15px;\n    overflow-y: auto;\n\tbox-shadow: 0px 5px 5px 0px #c8c8c8;\n}\n#admin-panel-titlebar-left {\n    display: -webkit-box;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n            flex-direction: row;\n    -webkit-box-flex: 1;\n            flex-grow: 1;\n    -webkit-box-align: center;\n            align-items: center;\n}\n#admin-panel-titlebar-right {\n    display: -webkit-box;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n            flex-direction: row;\n    -webkit-box-align: center;\n            align-items: center;\n}\n\n\n\n", ""]);
+exports.push([module.i, "\n#admin-panel-wrapper{\n    width: 100%;\n    height: 100%;\n    overflow: hidden;\n    display: -webkit-box;\n    display: flex;\n}\n#admin-panel-sidebar{\n    display: -webkit-box;\n    display: flex;\n    width: 250px;\n    background-color:#394046;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n            flex-direction: column;\n}\n#admin-panel-body{\n    display: -webkit-box;\n    display: flex;\n    -webkit-box-orient: vertical;\n    -webkit-box-direction: normal;\n            flex-direction: column;\n    -webkit-box-flex: 1;\n            flex-grow: 1;\n    background-color:#eeeeee;\n}\n#admin-panel-title {\n    display: -webkit-box;\n    display: flex;\n    padding: 25px 20px;\n    color: #d8a0ea;\n    font-size: 18px;\n    background-color: #394046;\n    border-radius: 5px;\n}\n#admin-panel-body-titlebar {\n    width: 100%;\n    display: -webkit-box;\n    display: flex;\n    padding: 15px;\n    box-sizing: border-box;\n}\n#admin-panel-body-content-wrap {\n    display: -webkit-box;\n    display: flex;\n    -webkit-box-flex: 1;\n            flex-grow: 1;\n    width: 100%;\n    overflow: hidden;\n    padding: 0 15px 15px;\n    box-sizing: border-box;\n}\n#admin-panel-body-content {\n\twidth: 100%;\n\tborder-radius: 5px;\n    background: white;\n    padding: 15px;\n    overflow-y: auto;\n\tbox-shadow: 0px 5px 5px 0px #c8c8c8;\n}\n#admin-panel-titlebar-left {\n    display: -webkit-box;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n            flex-direction: row;\n    -webkit-box-flex: 1;\n            flex-grow: 1;\n    -webkit-box-align: center;\n            align-items: center;\n}\n#admin-panel-titlebar-right {\n    display: -webkit-box;\n    display: flex;\n    -webkit-box-orient: horizontal;\n    -webkit-box-direction: normal;\n            flex-direction: row;\n    -webkit-box-align: center;\n            align-items: center;\n}\n\n\n\n", ""]);
 
 // exports
 
@@ -82215,7 +82344,22 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("h1", [_vm._v("Home")])
+  return _c(
+    "el-table",
+    { staticStyle: { width: "100%" }, attrs: { data: _vm.tableData } },
+    [
+      _c("el-table-column", {
+        attrs: { prop: "date", label: "Date", width: "180" }
+      }),
+      _vm._v(" "),
+      _c("el-table-column", {
+        attrs: { prop: "name", label: "Name", width: "180" }
+      }),
+      _vm._v(" "),
+      _c("el-table-column", { attrs: { prop: "address", label: "Address" } })
+    ],
+    1
+  )
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -82239,7 +82383,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { attrs: { id: "sign-in-page" } }, [
+  return _c("div", { ref: "sign-in", attrs: { id: "sign-in-page" } }, [
     _c("div", { attrs: { id: "sign-in-left" } }, [
       _c(
         "svg",
@@ -82439,21 +82583,18 @@ var render = function() {
           1
         ),
         _vm._v(" "),
-        _vm._m(0)
+        _c("div", { staticClass: "sign-in-form-submit-row" }, [
+          _c(
+            "div",
+            { attrs: { id: "sign-in-form-submit" }, on: { click: _vm.login } },
+            [_vm._v("Sign in")]
+          )
+        ])
       ])
     ])
   ])
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "sign-in-form-submit-row" }, [
-      _c("div", { attrs: { id: "sign-in-form-submit" } }, [_vm._v("Sign in")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 
@@ -82475,7 +82616,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { attrs: { id: "admin-panel-wrapper" } }, [
+  return _c("div", { ref: "dashboard", attrs: { id: "admin-panel-wrapper" } }, [
     _c(
       "div",
       { attrs: { id: "admin-panel-sidebar" } },
@@ -82490,9 +82631,9 @@ var render = function() {
             staticClass: "el-menu-vertical-demo",
             attrs: {
               "default-active": "2",
-              "background-color": "#545c64",
-              "text-color": "#fff",
-              "active-text-color": "#ffd04b"
+              "background-color": "#394046",
+              "text-color": "#e8e8e8",
+              "active-text-color": "#ffc72a"
             },
             on: { open: _vm.handleOpen, close: _vm.handleClose }
           },
@@ -97793,8 +97934,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _routes__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./routes */ "./resources/js/routes.js");
 /* harmony import */ var element_ui__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! element-ui */ "./node_modules/element-ui/lib/element-ui.common.js");
 /* harmony import */ var element_ui__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(element_ui__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _views_SignIn_SignIn__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./views/SignIn/SignIn */ "./resources/js/views/SignIn/SignIn.vue");
-/* harmony import */ var _views_app__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./views/app */ "./resources/js/views/app.vue");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _views_SignIn_SignIn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./views/SignIn/SignIn */ "./resources/js/views/SignIn/SignIn.vue");
+/* harmony import */ var _views_app__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./views/app */ "./resources/js/views/app.vue");
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
@@ -97802,22 +97945,21 @@ __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
 
 
+
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(element_ui__WEBPACK_IMPORTED_MODULE_2___default.a);
-new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
+v_inst = new vue__WEBPACK_IMPORTED_MODULE_0___default.a({
   el: '#app',
   router: _routes__WEBPACK_IMPORTED_MODULE_1__["default"],
-  render: function render(h) {
-    return h(_views_SignIn_SignIn__WEBPACK_IMPORTED_MODULE_3__["default"]);
-  },
   data: {
-    currentComponent: 'SignIn'
+    currentComponent: _views_SignIn_SignIn__WEBPACK_IMPORTED_MODULE_4__["default"]
   },
   components: {
-    'SignIn': _views_SignIn_SignIn__WEBPACK_IMPORTED_MODULE_3__["default"],
-    'DashBoard': _views_app__WEBPACK_IMPORTED_MODULE_4__["default"]
+    'SignIn': _views_SignIn_SignIn__WEBPACK_IMPORTED_MODULE_4__["default"],
+    'DashBoard': _views_app__WEBPACK_IMPORTED_MODULE_5__["default"]
   },
   methods: {
     swapComponent: function swapComponent(component) {
+      console.log('swapping....');
       this.currentComponent = component;
     }
   }
@@ -97855,6 +97997,7 @@ window._ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
  */
 
 window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+window.v_inst = null;
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /**
  * Echo exposes an expressive API for subscribing to channels and listening

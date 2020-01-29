@@ -7,8 +7,8 @@
     <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}">
     <title>Document</title>
 </head>
-<body>
-    <div id="app"></div>
+<body >
+    <div id="app" :is="currentComponent"></div>
 
     <script src="{{ URL::asset('js/app.js') }}"></script>
 
