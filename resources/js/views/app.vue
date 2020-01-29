@@ -2,7 +2,44 @@
     <div id="admin-panel-wrapper">
         <div id="admin-panel-sidebar">
             <div id="admin-panel-title">Example Name</div>
-
+            <el-menu
+            default-active="2"
+            class="el-menu-vertical-demo"
+            @open="handleOpen"
+            @close="handleClose"
+            background-color="#545c64"
+            text-color="#fff"
+            active-text-color="#ffd04b">
+            <el-submenu index="1">
+                <template slot="title">
+                <i class="el-icon-location"></i>
+                <span>Navigator One</span>
+                </template>
+                <el-menu-item-group title="Group One">
+                <el-menu-item index="1-1">item one</el-menu-item>
+                <el-menu-item index="1-2">item one</el-menu-item>
+                </el-menu-item-group>
+                <el-menu-item-group title="Group Two">
+                <el-menu-item index="1-3">item three</el-menu-item>
+                </el-menu-item-group>
+                <el-submenu index="1-4">
+                <template slot="title">item four</template>
+                <el-menu-item index="1-4-1">item one</el-menu-item>
+                </el-submenu>
+            </el-submenu>
+            <el-menu-item index="2">
+                <i class="el-icon-menu"></i>
+                <span>Navigator Two</span>
+            </el-menu-item>
+            <el-menu-item index="3" disabled>
+                <i class="el-icon-document"></i>
+                <span>Navigator Three</span>
+            </el-menu-item>
+            <el-menu-item index="4">
+                <i class="el-icon-setting"></i>
+                <span>Navigator Four</span>
+            </el-menu-item>
+            </el-menu>
         </div>
         <div id="admin-panel-body">
             <div id="admin-panel-body-titlebar">
@@ -31,11 +68,11 @@
                     </el-dropdown>
                 </div>
             </div>
-            <div id="admin-panel-body-content-wrap">
-                <div id="admin-panel-body-content">
+            <div id="admin-panel-body-content-wrap" >
+                <div id="admin-panel-body-content" v-loading="loading">
                     <transition>
                         <keep-alive>
-                            <router-view></router-view>
+                            <router-view ></router-view>
                         </keep-alive>
                     </transition>
                 </div>
@@ -47,7 +84,7 @@
 <script>
 
 export default {
-    name: 'App',
+    name: 'Dashboard',
     data(){
         return{
             dragging: false,
@@ -61,8 +98,8 @@ export default {
                 date: '2016-05-02',
                 name: 'Tom',
                 address: 'No. 189, Grove St, Los Angeles'
-            }
-            ]
+            }],
+            loading : false,
         }
     },
     methods: {
@@ -85,28 +122,18 @@ export default {
                 title: 'Title',
                 message: cmd
             });
+        },
+        handleOpen(){
+
+        },
+        handleClose(){
+
         }
     }
 }
 </script>
 
 <style>
-
-html{
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-}
-
-body{
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    width: 100%;
-    overflow: hidden;
-}
 
 #admin-panel-wrapper{
     width: 100%;
@@ -142,7 +169,7 @@ body{
 #admin-panel-body-titlebar {
     width: 100%;
     display: flex;
-    padding: 20px 20px 10px;
+    padding: 15px;
     box-sizing: border-box;
 }
 
@@ -150,16 +177,17 @@ body{
     display: flex;
     flex-grow: 1;
     width: 100%;
-    overflow-y: scroll;
-    padding: 10px 20px 20px;
+    overflow: hidden;
+    padding: 0 15px 15px;
     box-sizing: border-box;
 }
 
 #admin-panel-body-content {
 	width: 100%;
 	border-radius: 5px;
-    height: 1000px;
-    background: linear-gradient(to bottom, rgb(69, 104, 220), rgb(176, 106, 179));
+    background: white;
+    padding: 15px;
+    overflow-y: auto;
 	box-shadow: 0px 5px 5px 0px #c8c8c8;
 }
 
